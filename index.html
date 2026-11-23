@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <meta name="theme-color" content="#0b1510">
+  <title>Kurbağa Felsefesi — Bataklıktan İnsanlığa Notlar</title>
+  <meta name="description" content="Üyeliksiz, isimsiz, reklamsız bir onepage. Kurbağa felsefesi üzerine küçük dersler ve herkese açık anonim not duvarı.">
+  <meta property="og:title" content="Kurbağa Felsefesi">
+  <meta property="og:description" content="İnsan olmayı kurbağalardan öğrenmek. Üyelik yok, e-posta yok; sadece bataklık ve 480 karakter.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Kurbağa Felsefesi">
+  <meta property="og:image" content="assets/img/og.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Karanlık bir bataklıkta nilüfer yaprağının üstünde oturan kurbağa ve 'Kurbağa Felsefesi' başlığı">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kurbağa Felsefesi">
+  <meta name="twitter:description" content="İnsan olmayı kurbağalardan öğrenmek. Üyelik yok, e-posta yok; sadece bataklık ve 480 karakter.">
+  <meta name="twitter:image" content="assets/img/og.png">
+  <meta name="twitter:image:alt" content="Kurbağa Felsefesi — karanlık bataklık ve nilüfer üstünde kurbağa">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&amp;family=Fraunces:ital,opsz,wght@0,9..144,300..600;1,9..144,300..600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/wall.css">
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-frog" viewBox="0 0 32 32">
+      <path fill="currentColor" d="M16 11.2c-4.2 0-7.3 2.2-8.2 5.6C5.1 18.3 4 21.2 4 24.1 4 28.1 9.4 31 16 31s12-2.9 12-6.9c0-2.9-1.1-5.8-3.8-7.3-.9-3.4-4-5.6-8.2-5.6Z"/>
+      <circle cx="9.6" cy="8.8" r="5.1" fill="currentColor"/>
+      <circle cx="22.4" cy="8.8" r="5.1" fill="currentColor"/>
+      <circle cx="9.6" cy="8.8" r="1.9" fill="var(--ink, #0b1510)"/>
+      <circle cx="22.4" cy="8.8" r="1.9" fill="var(--ink, #0b1510)"/>
+      <path d="M12.4 22.2c2.1 2 5.1 2 7.2 0" fill="none" stroke="var(--ink, #0b1510)" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-lily" viewBox="0 0 24 24">
+      <path d="M12 20c5.2 0 9-2.8 9-6.3 0-3-3-5.4-7.2-6L12 13l-1.8-5.3C6 8.3 3 10.7 3 13.7 3 17.2 6.8 20 12 20Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M12 13v7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" opacity=".6"/>
+    </symbol>
+    <symbol id="i-reed" viewBox="0 0 24 24">
+      <path d="M7 21c1.2-5.3 1.3-10.7.4-16M12 21c-1-5.2-.9-10.3.3-15.3M17 21c1.1-4.3 1.5-8.5 1-12.6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      <ellipse cx="7.4" cy="6.2" rx="1.5" ry="3.2" fill="currentColor" opacity=".8"/>
+      <ellipse cx="12.3" cy="7.1" rx="1.5" ry="3.2" fill="currentColor" opacity=".55"/>
+      <ellipse cx="18" cy="9.7" rx="1.4" ry="2.8" fill="currentColor" opacity=".7"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24">
+      <path d="M20.2 15.4A8.3 8.3 0 0 1 8.6 3.8a8.3 8.3 0 1 0 11.6 11.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24">
+      <path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24">
+      <rect x="9" y="9" width="10.5" height="10.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <path d="M15 6.5V5.8A1.8 1.8 0 0 0 13.2 4H5.8A1.8 1.8 0 0 0 4 5.8v7.4A1.8 1.8 0 0 0 5.8 15h.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24">
+      <path d="M20 12a8 8 0 1 1-2.5-5.8M20 4v5h-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-shuffle" viewBox="0 0 24 24">
+      <path d="M4 7h2.5c4.5 0 6.5 10 11 10H20M4 17h2.5c1.7 0 3-1.4 4.2-3.2M14.8 9c.9-.7 1.8-1 2.7-1H20M17 5l3 3-3 3M17 14l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 8h16M4 16h11" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-chevron-left" viewBox="0 0 24 24">
+      <path d="m14.5 6-6 6 6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24">
+      <path d="m9.5 6 6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-down" viewBox="0 0 24 24">
+      <path d="M12 4v15M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24">
+      <path d="M2.5 12S6 5.8 12 5.8 21.5 12 21.5 12 18 18.2 12 18.2 2.5 12 2.5 12Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <circle cx="12" cy="12" r="2.7" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    </symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24">
+      <path d="M3 9c3-2.6 5-2.6 8 0s5 2.6 8 0M3 15c3-2.6 5-2.6 8 0s5 2.6 8 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-sound" viewBox="0 0 24 24">
+      <path d="M4 10v4h3l4 4V6L7 10H4Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      <path d="M15 9.2a4 4 0 0 1 0 5.6M17.7 6.5a8 8 0 0 1 0 11" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-check" viewBox="0 0 24 24">
+      <path d="m5 12.5 4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24">
+      <rect x="4.5" y="10" width="15" height="10" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">İçeriğe zıpla</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark"><svg aria-hidden="true"><use href="#i-frog"/></svg></span>
+        <span class="brand-text">
+          <span class="brand-name">Kurbağa Felsefesi</span>
+          <span class="brand-sub">bataklıktan notlar</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Ana menü">
+        <a href="#felsefe">Felsefe</a>
+        <a href="#duvar">Nilüfer</a>
+        <a href="#bilgelik">Bilgelik</a>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-amber btn-sm header-cta" href="#duvar">Not bırak <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false">
+          <svg class="menu-icon" aria-hidden="true"><use href="#i-menu"/></svg>
+          <span class="sr-only">Menüyü aç</span>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <nav aria-label="Mobil menü">
+        <a href="#felsefe">Felsefe</a>
+        <a href="#duvar">Nilüfer Duvarı</a>
+        <a href="#bilgelik">Bataklık Bilgeliği</a>
+        <a class="btn btn-amber" href="#duvar">Not bırak <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span> Bir bataklık felsefesi</p>
+          <h1 class="hero-title reveal" id="hero-title" style="--d:.06s">İnsan olmayı <span class="accent-word">kurbağalardan<svg class="scribble" viewBox="0 0 300 26" preserveAspectRatio="none" aria-hidden="true"><path d="M4 15C62 7 154 5 296 9"/><path d="M22 22c74-7 160-8 252-4"/></svg></span> öğrenmek.</h1>
+          <p class="hero-lead reveal" style="--d:.12s">Kurbağa acele etmez. Suya bakar, taşı tartar, sonra zıplar. Biz de aynısını yapıyoruz: dinliyor, düşünüyor ve nilüferin üstüne bir not bırakıyoruz.</p>
+          <div class="hero-actions reveal" style="--d:.18s">
+            <a class="btn btn-amber" href="#duvar">Nilüfere not bırak <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-ghost" href="#felsefe">Önce felsefeyi oku</a>
+          </div>
+          <ul class="hero-facts reveal" style="--d:.23s" aria-label="Neler gerekli">
+            <li>üyelik yok</li>
+            <li>e-posta yok</li>
+            <li>480 karakter</li>
+          </ul>
+          <p class="hero-whisper reveal" style="--d:.28s">Burada kimse kim olduğunu sormaz.</p>
+        </div>
+
+        <div class="hero-art-wrap reveal" style="--d:.14s">
+          <div class="hero-art" id="frog-scene">
+            <span class="firefly f1" aria-hidden="true"></span>
+            <span class="firefly f2" aria-hidden="true"></span>
+            <span class="firefly f3" aria-hidden="true"></span>
+            <span class="firefly f4" aria-hidden="true"></span>
+            <span class="firefly f5" aria-hidden="true"></span>
+            <span class="firefly f6" aria-hidden="true"></span>
+            <span class="firefly f7" aria-hidden="true"></span>
+            <svg class="pond-art" viewBox="0 0 560 640" role="img" aria-label="Nilüfer yaprağının üzerinde oturan, sazlıkların arasından bakan bir kurbağa">
+              <defs>
+                <radialGradient id="moon-glow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#f3d89a" stop-opacity=".3"/>
+                  <stop offset=".55" stop-color="#f3d89a" stop-opacity=".08"/>
+                  <stop offset="1" stop-color="#f3d89a" stop-opacity="0"/>
+                </radialGradient>
+                <linearGradient id="pad-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop stop-color="#507d57"/>
+                  <stop offset="1" stop-color="#274534"/>
+                </linearGradient>
+                <linearGradient id="frog-grad" x1=".2" y1="0" x2=".8" y2="1">
+                  <stop stop-color="#719c61"/>
+                  <stop offset=".6" stop-color="#4b7451"/>
+                  <stop offset="1" stop-color="#345840"/>
+                </linearGradient>
+                <radialGradient id="belly-grad" cx="50%" cy="40%" r="60%">
+                  <stop stop-color="#dbe2b4"/>
+                  <stop offset="1" stop-color="#aebd88"/>
+                </radialGradient>
+              </defs>
+              <circle cx="300" cy="240" r="230" fill="url(#moon-glow)"/>
+              <circle cx="300" cy="238" r="176" fill="none" stroke="#f0c36d" stroke-opacity=".13"/>
+              <circle cx="300" cy="238" r="208" fill="none" stroke="#f0c36d" stroke-opacity=".06" stroke-dasharray="2 11"/>
+              <g fill="#f3ecd9">
+                <circle cx="118" cy="178" r="1.5" opacity=".38"/>
+                <circle cx="159" cy="96" r="1" opacity=".3"/>
+                <circle cx="442" cy="120" r="1.4" opacity=".32"/>
+                <circle cx="486" cy="245" r="1" opacity=".26"/>
+                <circle cx="80" cy="300" r="1.2" opacity=".24"/>
+                <circle cx="404" cy="64" r="1" opacity=".28"/>
+              </g>
+              <g fill="none" stroke="#7fa678" stroke-linecap="round" opacity=".45">
+                <path d="M62 552c17-92 12-182-8-254" stroke-width="2.5"/>
+                <path d="M89 556c1-78 14-143 34-197" stroke-width="2"/>
+                <path d="M112 555c9-62 25-110 48-153" stroke-width="1.6"/>
+                <path d="M482 548c-13-79-8-150 12-210" stroke-width="2.4"/>
+                <path d="M506 554c-1-66-12-122-31-169" stroke-width="1.8"/>
+                <path d="M530 560c3-47 12-88 27-125" stroke-width="1.4"/>
+              </g>
+              <g fill="#8b6a4a" opacity=".65">
+                <ellipse cx="53" cy="294" rx="5" ry="15"/>
+                <ellipse cx="494" cy="336" rx="4.5" ry="13"/>
+                <ellipse cx="559" cy="431" rx="3.5" ry="10"/>
+              </g>
+              <g fill="none" stroke="#9dc183" stroke-opacity=".18">
+                <ellipse cx="298" cy="532" rx="205" ry="47"/>
+                <ellipse cx="298" cy="536" rx="242" ry="59" stroke-dasharray="2 10" stroke-opacity=".5"/>
+                <ellipse cx="298" cy="540" rx="276" ry="70" stroke-opacity=".45"/>
+              </g>
+              <g fill="none" stroke="#dbe6c2" stroke-linecap="round" opacity=".18">
+                <path d="M119 474c38-7 76-8 114-4" stroke-width="2"/>
+                <path d="M396 509c34-2 63 1 91 7" stroke-width="2"/>
+                <path d="M165 577c45-5 87-5 126-1" stroke-width="1.5"/>
+              </g>
+              <g class="lily-pad">
+                <path d="M300 505 282 466c-72 4-126 18-126 36 0 23 68 46 144 46s144-23 144-46c0-16-50-30-106-34l-38 37Z" fill="url(#pad-grad)" stroke="#a8c795" stroke-opacity=".2" stroke-width="2"/>
+                <g fill="none" stroke="#a8c795" stroke-opacity=".13" stroke-width="1.5">
+                  <path d="M300 505 216 487M300 505 207 512M300 505 239 535M300 505 361 534M300 505 397 511M300 505 384 485"/>
+                </g>
+                <ellipse cx="258" cy="499" rx="80" ry="16" fill="#dbe6c2" opacity=".06"/>
+              </g>
+              <g class="frog" transform="rotate(-1.5 296 430)">
+                <ellipse cx="231" cy="474" rx="38" ry="25" fill="#2c4d39" transform="rotate(-16 231 474)"/>
+                <ellipse cx="361" cy="474" rx="38" ry="25" fill="#2c4d39" transform="rotate(16 361 474)"/>
+                <path d="M234 424c-17-15-14-43 6-57 1-22 18-37 39-32 8-16 38-16 46 0 21-5 38 10 39 32 20 14 23 42 6 57 10 27-12 51-40 53-16 12-40 12-56 0-28-2-50-26-40-53Z" fill="url(#frog-grad)"/>
+                <circle cx="257" cy="344" r="23" fill="#5c8757"/>
+                <circle cx="335" cy="344" r="23" fill="#5c8757"/>
+                <circle cx="257" cy="345" r="13.5" fill="#f0c36d"/>
+                <circle cx="335" cy="345" r="13.5" fill="#f0c36d"/>
+                <ellipse cx="257" cy="345" rx="7" ry="3.3" fill="#0b1510"/>
+                <ellipse cx="335" cy="345" rx="7" ry="3.3" fill="#0b1510"/>
+                <circle cx="261" cy="341" r="2" fill="#fff8e6" opacity=".9"/>
+                <circle cx="339" cy="341" r="2" fill="#fff8e6" opacity=".9"/>
+                <path d="M242 333c9-10 23-10 31-1M320 332c8-9 22-9 31 1" fill="none" stroke="#2c4d39" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+                <ellipse cx="296" cy="437" rx="37" ry="30" fill="url(#belly-grad)" opacity=".92"/>
+                <circle cx="281" cy="389" r="2" fill="#2c4d39" opacity=".55"/>
+                <circle cx="311" cy="389" r="2" fill="#2c4d39" opacity=".55"/>
+                <path d="M276 404c13 10 27 10 40 0" fill="none" stroke="#2c4d39" stroke-width="3" stroke-linecap="round" opacity=".8"/>
+                <circle cx="241" cy="406" r="11" fill="#e6c48d" opacity=".12"/>
+                <circle cx="351" cy="406" r="11" fill="#e6c48d" opacity=".12"/>
+                <g fill="none" stroke="#4b7451" stroke-width="13" stroke-linecap="round">
+                  <path d="M263 462c-5 17-13 27-23 34"/>
+                  <path d="M329 462c5 17 13 27 23 34"/>
+                </g>
+                <g fill="#4b7451">
+                  <circle cx="238" cy="499" r="6"/>
+                  <circle cx="248" cy="502" r="5"/>
+                  <circle cx="354" cy="499" r="6"/>
+                  <circle cx="344" cy="502" r="5"/>
+                </g>
+                <g fill="#2c4d39" opacity=".45">
+                  <ellipse cx="240" cy="430" rx="7" ry="4" transform="rotate(-20 240 430)"/>
+                  <ellipse cx="352" cy="434" rx="6" ry="3.5" transform="rotate(18 352 434)"/>
+                  <ellipse cx="266" cy="367" rx="6" ry="3.5" transform="rotate(-8 266 367)"/>
+                </g>
+                <g transform="rotate(-7 389 477)">
+                  <rect x="363" y="455" width="60" height="43" rx="4" fill="#f3ecd9" opacity=".94"/>
+                  <path d="M372 466h42M372 474h34M372 482h38" stroke="#67765f" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+                  <path d="M423 455v43" stroke="#d9cdb6" stroke-width="1"/>
+                </g>
+              </g>
+              <g fill="none" stroke="#9dc183" stroke-opacity=".3">
+                <path d="M134 458c0-9 11-9 11 0 0-8 11-8 11 0" fill="#f3ecd9" fill-opacity=".06"/>
+              </g>
+            </svg>
+            <span class="art-label art-label--top">rana anonyma <span>·</span> no. 001</span>
+            <span class="art-label art-label--bottom">bataklık, gece yarısı</span>
+            <button class="frog-hotspot" id="frog-button" type="button" aria-label="Kurbağayı vıraklat">
+              <span class="sr-only">Kurbağayı vıraklat</span>
+            </button>
+            <span class="frog-bubble" id="frog-bubble" role="status" aria-live="polite">vırak.</span>
+          </div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#felsefe"><span>aşağı zıpla</span><span class="scroll-line" aria-hidden="true"></span></a>
+    </section>
+
+    <section class="philosophy section" id="felsefe" aria-labelledby="felsefe-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow reveal"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-lily"/></svg> Kısa dersler</p>
+            <h2 class="reveal" id="felsefe-title" style="--d:.06s">Kurbağa felsefesi,<br><em>üç adımda.</em></h2>
+          </div>
+          <p class="section-intro reveal" style="--d:.12s">Ne bir din, ne bir reçete. Bataklıkta yaşayan küçük bir canlının, insan olma hallerimize tuttuğu bir ayna.</p>
+        </div>
+        <div class="lesson-grid">
+          <article class="lesson reveal">
+            <div class="lesson-top"><span class="lesson-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span><span class="lesson-num">01</span></div>
+            <h3>Bakmadan zıplama.</h3>
+            <p>Kurbağa, mesafeyi ölçmeden havalanmaz. İnsanın bazen en büyük cesareti, bir saniye daha beklemektir.</p>
+            <span class="lesson-rule" aria-hidden="true"></span>
+          </article>
+          <article class="lesson reveal" style="--d:.08s">
+            <div class="lesson-top"><span class="lesson-icon"><svg aria-hidden="true"><use href="#i-wave"/></svg></span><span class="lesson-num">02</span></div>
+            <h3>İki dünyada da yaşa.</h3>
+            <p>Su da onun, toprak da. İçindeki sesle dışarıdaki dünya arasında gidip gelmek bir bölünme değil; iki kez nefes alabilmektir.</p>
+            <span class="lesson-rule" aria-hidden="true"></span>
+          </article>
+          <article class="lesson reveal" style="--d:.16s">
+            <div class="lesson-top"><span class="lesson-icon"><svg aria-hidden="true"><use href="#i-sound"/></svg></span><span class="lesson-num">03</span></div>
+            <h3>Vıraklamaktan korkma.</h3>
+            <p>Sesin çıktığı yerin küçük olması, söylediğinin küçük olduğu anlamına gelmez. Bataklık bile bir gece korosuyla başlar.</p>
+            <span class="lesson-rule" aria-hidden="true"></span>
+          </article>
+        </div>
+        <p class="section-footnote reveal">Fazlası yok. Kurbağa felsefesi kısa tutar.</p>
+      </div>
+    </section>
+
+    <section class="manifesto" aria-label="Kurbağa felsefesinin ilk ilkesi">
+      <div class="manifesto-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+      <div class="wrap manifesto-inner reveal">
+        <p class="manifesto-label">I. İLKE</p>
+        <blockquote>Belki mesele daha yükseğe zıplamak değil, <em>konduğun taşın kıymetini bilmek.</em></blockquote>
+        <cite>Kurbağa Felsefesi <span>·</span> Bataklık Notları, No. 1</cite>
+      </div>
+    </section>
+
+    <div class="shore shore--paper" aria-hidden="true">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path class="shore-fill" d="M0 54c210 45 380 14 566 10 186-5 330 44 522 26 130-12 244-38 352-28v48H0Z"/><path class="shore-line" d="M0 54c210 45 380 14 566 10 186-5 330 44 522 26 130-12 244-38 352-28"/></svg>
+    </div>
+
+    <section class="wall section" id="duvar" aria-labelledby="duvar-title">
+      <div class="wrap">
+        <div class="wall-head">
+          <div>
+            <p class="eyebrow eyebrow--dark reveal"><span class="dot dot--dark" aria-hidden="true"></span> Açık nilüfer · herkese açık</p>
+            <h2 class="reveal" id="duvar-title" style="--d:.06s">Nilüfer<br><em>Duvarı.</em></h2>
+          </div>
+          <div class="wall-head-copy reveal" style="--d:.12s">
+            <p class="section-intro section-intro--dark">Adını, e-postanı, şifreni sormuyoruz. Bir not bırak, oku, git. Yazdıkların herkesin görebileceği bir yerde: burada.</p>
+            <p class="wall-rule"><svg aria-hidden="true"><use href="#i-lock"/></svg> İsimsiz kal, kişisel bilgini paylaşma.</p>
+          </div>
+        </div>
+
+        <div class="wall-layout">
+          <aside class="composer-card reveal" aria-labelledby="composer-title">
+            <div class="composer-corner" aria-hidden="true"><span></span><span></span><span></span></div>
+            <p class="composer-kicker">BİR NOT BIRAK</p>
+            <h3 id="composer-title">Bataklığa ne bırakıyorsun?</h3>
+            <p class="composer-sub">Uzun uzun düşünmene gerek yok. Bir cümle de yeter, bir itiraf da.</p>
+            <form id="note-form" novalidate>
+              <div class="field">
+                <div class="field-label-row">
+                  <label for="nickname">Takma ad <span>isteğe bağlı</span></label>
+                  <span class="field-count" id="nickname-count">0/24</span>
+                </div>
+                <input id="nickname" name="nickname" type="text" maxlength="24" autocomplete="off" placeholder="isimsiz kurbağa">
+              </div>
+              <div class="field">
+                <div class="field-label-row">
+                  <label for="note">Notun</label>
+                  <span class="field-count" id="note-count">0 / 480</span>
+                </div>
+                <textarea id="note" name="note" rows="5" maxlength="480" required placeholder="Bataklığa ne bırakmak istersin?" aria-describedby="note-help note-error"></textarea>
+                <p class="field-help" id="note-help">Yazdıkların herkese açık. Kişisel bilgini paylaşma.</p>
+                <p class="field-error" id="note-error" role="alert"></p>
+              </div>
+              <div class="hp" aria-hidden="true">
+                <label for="website">Website</label>
+                <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+              </div>
+              <button class="btn btn-amber btn-block" type="submit" id="submit-note">
+                <span class="btn-label">Nilüfere bırak</span>
+                <span class="btn-spinner" aria-hidden="true"></span>
+                <svg class="btn-arrow" aria-hidden="true"><use href="#i-arrow"/></svg>
+              </button>
+              <p class="composer-legal">Göndererek notunun herkese açık yayınlanmasını kabul ediyorsun. <button type="button" class="link-button" data-open-privacy>Anonimlik nasıl işliyor?</button></p>
+            </form>
+          </aside>
+
+          <div class="wall-feed reveal" style="--d:.08s" aria-labelledby="feed-title">
+            <div class="feed-head">
+              <div>
+                <h3 id="feed-title">Nilüferdeki notlar</h3>
+                <p class="feed-meta">
+                  <span id="note-total">0 not</span>
+                  <span class="feed-meta-dot" aria-hidden="true">·</span>
+                  <span id="feed-updated">şimdi</span>
+                  <span class="mode-chip" id="mode-chip">yerel demo</span>
+                </p>
+              </div>
+              <button class="icon-button" id="refresh-notes" type="button" aria-label="Notları yenile" title="Notları yenile">
+                <svg aria-hidden="true"><use href="#i-refresh"/></svg>
+              </button>
+            </div>
+            <div class="feed-notice" id="feed-notice" hidden></div>
+            <noscript><p class="feed-notice">Not bırakmak ve duvarı görmek için tarayıcında JavaScript'i açman gerekiyor.</p></noscript>
+            <div class="notes-skeleton" id="notes-skeleton" hidden aria-hidden="true">
+              <div class="skeleton-card"><span></span><span></span><span></span></div>
+              <div class="skeleton-card"><span></span><span></span><span></span></div>
+            </div>
+            <div class="notes-grid" id="notes-grid" aria-busy="false"></div>
+            <div class="empty-state" id="empty-state" hidden>
+              <svg class="empty-frog" viewBox="0 0 120 90" aria-hidden="true">
+                <ellipse cx="60" cy="79" rx="46" ry="8" fill="#1b2b21" opacity=".08"/>
+                <path d="M25 63c-11-9-9-26 4-34 1-13 11-22 24-19 5-10 23-10 28 0 13-3 23 6 24 19 13 8 15 25 4 34 6 16-8 30-24 31-10 7-24 7-34 0-16-1-30-15-26-31Z" fill="#4b7451"/>
+                <circle cx="39" cy="32" r="13" fill="#5c8757"/><circle cx="81" cy="32" r="13" fill="#5c8757"/>
+                <circle cx="39" cy="33" r="7" fill="#f0c36d"/><circle cx="81" cy="33" r="7" fill="#f0c36d"/>
+                <ellipse cx="39" cy="33" rx="3.5" ry="1.8" fill="#0b1510"/><ellipse cx="81" cy="33" rx="3.5" ry="1.8" fill="#0b1510"/>
+                <ellipse cx="60" cy="58" rx="19" ry="15" fill="#dbe2b4" opacity=".8"/>
+                <path d="M50 52c7 5 13 5 20 0" fill="none" stroke="#2c4d39" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M36 67c-2 8-7 13-12 16M84 67c2 8 7 13 12 16" fill="none" stroke="#4b7451" stroke-width="8" stroke-linecap="round"/>
+              </svg>
+              <p class="empty-title">Nilüfer henüz boş.</p>
+              <p class="empty-sub">İlk notu sen bırak. Bir cümle, bir soru, bir itiraf; ne varsa.</p>
+              <button class="btn btn-outline-dark btn-sm" type="button" data-focus-composer>İlk notu ben yazayım</button>
+            </div>
+            <p class="wall-footnote" id="wall-footnote">En yeni 60 not gösteriliyor. Moderatör yok; nezaket sende.</p>
+          </div>
+        </div>
+      </div>
+
+      <template id="note-template">
+        <article class="note-card">
+          <span class="note-stamp" aria-hidden="true"><svg><use href="#i-lily"/></svg></span>
+          <p class="note-body"></p>
+          <footer class="note-foot">
+            <div class="note-by">
+              <span class="note-avatar" aria-hidden="true"><svg><use href="#i-frog"/></svg></span>
+              <span class="note-name"></span>
+            </div>
+            <div class="note-actions">
+              <time class="note-time"></time>
+              <button class="note-copy" type="button" aria-label="Notu kopyala" title="Notu kopyala"><svg aria-hidden="true"><use href="#i-copy"/></svg></button>
+            </div>
+          </footer>
+        </article>
+      </template>
+    </section>
+
+    <div class="shore shore--night" aria-hidden="true">
+      <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path class="shore-fill" d="M0 66c180-32 322 16 510 22 188 6 306-36 504-24 158 10 288 34 426 12v60H0Z"/><path class="shore-line" d="M0 66c180-32 322 16 510 22 188 6 306-36 504-24 158 10 288 34 426 12"/></svg>
+    </div>
+
+    <section class="wisdom section" id="bilgelik" aria-labelledby="bilgelik-title">
+      <div class="wrap wisdom-grid">
+        <div class="wisdom-intro">
+          <p class="eyebrow reveal"><svg class="eyebrow-icon" aria-hidden="true"><use href="#i-moon"/></svg> Bataklık bilgeliği</p>
+          <h2 class="reveal" id="bilgelik-title" style="--d:.06s">Bir taşa kon,<br><em>bir cümle al.</em></h2>
+          <p class="section-intro reveal" style="--d:.12s">Dokuz nottan biri. Hangisi karşına çıkarsa, o günkü taşın o. Acele etme; kurbağa da etmez.</p>
+          <p class="wisdom-hint reveal">Kartın üstündeki oklarla gezebilirsin.</p>
+        </div>
+        <div class="quote-card reveal" id="quote-card" style="--d:.08s">
+          <span class="quote-mark" aria-hidden="true">“</span>
+          <svg class="quote-frog" viewBox="0 0 32 32" aria-hidden="true"><use href="#i-frog"/></svg>
+          <div class="quote-top">
+            <span class="quote-tag" id="quote-tag">sabır</span>
+            <span class="quote-count" id="quote-count">01 / 09</span>
+          </div>
+          <blockquote class="quote-text" id="quote-text" aria-live="polite">Her bataklık, kendi nilüferini yetiştirir.</blockquote>
+          <div class="quote-foot">
+            <span class="quote-sig">— Kurbağa Felsefesi</span>
+            <div class="quote-nav">
+              <button class="icon-button icon-button--light" id="quote-prev" type="button" aria-label="Önceki söz"><svg aria-hidden="true"><use href="#i-chevron-left"/></svg></button>
+              <button class="btn btn-ghost btn-sm" id="quote-next" type="button">Başka bir söz <svg aria-hidden="true"><use href="#i-shuffle"/></svg></button>
+              <button class="icon-button icon-button--light" id="quote-next-arrow" type="button" aria-label="Sonraki söz"><svg aria-hidden="true"><use href="#i-chevron-right"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="closing-frog" aria-hidden="true"><svg viewBox="0 0 32 32"><use href="#i-frog"/></svg></div>
+      <div class="wrap closing-inner reveal">
+        <p class="eyebrow">SON BİR VIRAK</p>
+        <h2 id="closing-title">Bataklıkta <em>yer var.</em></h2>
+        <p>Adını getirmene gerek yok. Bir cümle getir, yeter.</p>
+        <a class="btn btn-amber" href="#duvar">Nilüfere dön <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <span class="brand-mark"><svg aria-hidden="true"><use href="#i-frog"/></svg></span>
+          <span class="brand-text"><span class="brand-name">Kurbağa Felsefesi</span><span class="brand-sub">bataklıktan notlar</span></span>
+        </a>
+        <p>İnsanlığa dair küçük notların üyeliksiz, reklamsız ve isimsiz buluşma yeri.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Alt menü">
+        <p class="footer-heading">Bataklık haritası</p>
+        <a href="#felsefe">Felsefe</a>
+        <a href="#duvar">Nilüfer Duvarı</a>
+        <a href="#bilgelik">Bataklık Bilgeliği</a>
+      </nav>
+      <div class="footer-meta">
+        <p class="footer-heading">Küçük not</p>
+        <p>Üyelik yok.<br>Takip yok.<br>Reklam yok.</p>
+        <p class="footer-license">MIT lisansı · <span id="year">2026</span></p>
+      </div>
+    </div>
+    <div class="wrap footer-bottom">
+      <p>© <span id="year-2">2026</span> Kurbağa Felsefesi. <span class="footer-quote">İsimsiz kal, nazik ol.</span></p>
+      <p class="footer-note">Burada yazılanlar yazanın sorumluluğundadır.</p>
+    </div>
+  </footer>
+
+  <a class="fab" id="fab" href="#duvar" aria-label="Nilüfere not bırak">
+    <span class="fab-icon" aria-hidden="true"><svg><use href="#i-frog"/></svg></span>
+    <span>Not bırak</span>
+  </a>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+    <svg aria-hidden="true"><use href="#i-check"/></svg>
+    <span id="toast-text"></span>
+  </div>
+
+  <dialog class="privacy-dialog" id="privacy-dialog" aria-labelledby="privacy-title">
+    <div class="dialog-inner">
+      <button class="dialog-close" type="button" data-close-dialog aria-label="Kapat"><svg aria-hidden="true"><use href="#i-close"/></svg></button>
+      <p class="eyebrow">KÜÇÜK BİR SÖZLEŞME</p>
+      <h2 id="privacy-title">Anonimlik nasıl işliyor?</h2>
+      <div class="dialog-copy">
+        <p>Kayıt yok. E-posta, şifre, telefon numarası istemiyoruz. Takma ad tamamen isteğe bağlı; boş bırakırsan notun <strong>“İsimsiz Kurbağa”</strong> imzasıyla görünür.</p>
+        <ul>
+          <li>Yazdığın not herkese açık bir duvara gider. Adres, telefon, okul gibi kişisel bilgilerini paylaşma.</li>
+          <li>Bu sayfa reklam, analitik veya takip çerezi kullanmaz.</li>
+          <li>Notlar barındırma ve veritabanı altyapısında saklanır; sağlayıcı standart teknik kayıtlar tutabilir.</li>
+          <li>Moderatör yok. Nezaket, bu bataklığın tek kuralı.</li>
+        </ul>
+        <p data-local-only>Şu an <strong>yerel demo modundasın</strong>: notlar yalnızca bu tarayıcıda saklanır, başka ziyaretçiler göremez. Herkese açık duvar için README'deki Supabase kurulumuna bak.</p>
+      </div>
+      <button class="btn btn-dark" type="button" data-close-dialog>Anladım, vırak.</button>
+    </div>
+  </dialog>
+
+  <script src="assets/js/config.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
