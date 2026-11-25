@@ -4,14 +4,22 @@
    Site kutudan çıktığı gibi "yerel demo" modunda çalışır:
    notlar yalnızca ziyaretçinin tarayıcısında saklanır.
 
-   Herkesin aynı duvarı görmesi için ücretsiz bir Supabase
-   projesi açıp aşağıdaki iki alanı doldurman yeterli.
-   Adım adım kurulum: README.md → "Herkese açık duvar".
+   Ortak duvar için iki seçenek var:
+   1) Kendi cPanel sunucun: provider "custom" + apiBase
+   2) Supabase: provider "supabase" + URL/anon anahtar
+
+   cPanel kurulumu: DEPLOY.md → "GitHub Pages + cPanel".
    ========================================================= */
 
 window.KF_CONFIG = {
   cloud: {
-    provider: "supabase",
+    // "local" = sadece bu tarayıcı, "custom" = kendi sunucun, "supabase" = Supabase
+    provider: "custom",
+
+    // cPanel hazır olunca:
+    // "https://api.perihanmustafayeva.com/api.php"
+    apiBase: "",
+
     supabaseUrl: "",       // örn. "https://abcdefgh.supabase.co"
     supabaseAnonKey: "",   // Settings → API → anon public anahtarı
     table: "notes"

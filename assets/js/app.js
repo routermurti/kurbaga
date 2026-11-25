@@ -352,7 +352,7 @@
       website: $("#website")
     };
     var template = $("#note-template");
-    var localNotice = "Yerel demo: notlar yalnızca bu tarayıcıda saklanıyor. Herkesin görmesi için README'deki Supabase kurulumunu yap.";
+    var localNotice = "Yerel demo: notlar yalnızca bu tarayıcıda saklanıyor. Herkesin görmesi için DEPLOY.md'deki cPanel kurulumunu yap.";
     var state = {
       notes: [],
       loaded: false,

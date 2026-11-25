@@ -6,6 +6,10 @@ dersler, bataklık bilgeliği kartları ve herkese açık anonim bir not duvarı
 Site tamamen statiktir. HTML, CSS ve JavaScript dışında bir derleme adımı yoktur;
 bu yüzden GitHub Pages'e doğrudan yüklenebilir.
 
+> **Önerilen kurulum:** Ön yüz GitHub Pages'te
+> (`https://routermurti.github.io/kurbaga/`), ortak duvar ve kullanıcı altyapısı
+> kendi cPanel sunucunda. Adım adım kurulum: [DEPLOY.md](DEPLOY.md).
+
 ![Kurbağa Felsefesi](assets/img/og.png)
 
 ## Neler var?
@@ -97,6 +101,38 @@ Yeni bir not gönderdikten sonra bu sayının artması, bulut bağlantısının 
 gösterir. Notları silmek veya denetlemek istersen Supabase Dashboard →
 **Table Editor → notes** bölümünü kullanabilirsin.
 
+## GitHub Pages + cPanel sunucusu (önerilen)
+
+Bu projede ön yüz GitHub Pages'te, dinamik kısım kendi sunucunda çalışacak şekilde
+hazırlandı:
+
+```text
+https://routermurti.github.io/kurbaga/   → statik ön yüz
+                    │
+                    │ HTTPS + CORS
+                    ▼
+https://api.perihanmustafayeva.com/api.php → cPanel API
+                    │
+                    ▼
+              MySQL: wwwafyon_kurbaga
+```
+
+- GitHub Pages'te yalnızca HTML/CSS/JS yayınlanır.
+- Notlar, kullanıcı hesapları ve rate limit cPanel sunucusunda çalışır.
+- `server/` klasörü cPanel'e yüklenir; GitHub Pages'e yüklenmez.
+- Ayrıntılı cPanel, MySQL, SSL ve `config.js` adımları için
+  [DEPLOY.md](DEPLOY.md) dosyasına bak.
+
+Kısa özet:
+
+1. cPanel'de `api` subdomain'i oluştur: `api.perihanmustafayeva.com`.
+2. `server/` içindeki dosyaları `/public_html/api` klasörüne yükle.
+3. MySQL veritabanı ve kullanıcı oluştur, `server/schema.sql` dosyasını içe aktar.
+4. `server/config.php` içindeki DB bilgilerini ve `ip_salt` değerini doldur.
+5. `assets/js/config.js` içinde `provider: "custom"` ve
+   `apiBase: "https://api.perihanmustafayeva.com/api.php"` yap.
+6. GitHub'a `config.js` değişikliğini yükle; Pages yeniden yayınlasın.
+
 ## Dosya yapısı
 
 ```text
@@ -110,10 +146,17 @@ gösterir. Notları silmek veya denetlemek istersen Supabase Dashboard →
 │   │   └── og.png          # Sosyal paylaşım önizlemesi (1200 × 630)
 │   └── js/
 │       ├── app.js          # Arayüz etkileşimleri ve duvar mantığı
-│       ├── config.js       # Supabase anahtarları ve duvar limitleri
-│       └── store.js        # localStorage / Supabase veri adaptörü
+│       ├── config.js       # API/Supabase seçimi ve duvar limitleri
+│       └── store.js        # localStorage / cPanel API / Supabase adaptörü
+├── server/                 # cPanel'e yüklenecek PHP API (GitHub Pages'e yükleme)
+│   ├── api.php             # Notlar + kullanıcı uç noktaları
+│   ├── config.php          # MySQL ve CORS ayarları
+│   ├── db.php              # PDO bağlantısı
+│   ├── schema.sql          # MySQL tabloları
+│   └── .htaccess
 ├── supabase/
 │   └── schema.sql          # Supabase tablo, indeks ve RLS politikaları
+├── DEPLOY.md               # GitHub Pages + cPanel kurulum rehberi
 ├── favicon.svg
 ├── .nojekyll
 └── README.md
@@ -136,14 +179,14 @@ gösterir. Notları silmek veya denetlemek istersen Supabase Dashboard →
 
 - **Yerel demo:** Notlar yalnızca ziyaretçinin tarayıcısında tutulur; sayfa
   yenilendiğinde kaybolmaz, ancak başka cihazlardan görünmez.
-- **Bulut modu:** Notlar ortak Supabase tablosunda saklanır. Herkes okuyabilir
-  ve not ekleyebilir. Bu yüzden kişisel bilgi paylaşımını engelleyen bir
-  arayüz/uyarı bulunur; yine de kullanıcıların yazdıklarından kullanıcı
-  sorumludur.
+- **Uzak mod:** Notlar ortak veritabanında saklanır; cPanel API veya Supabase
+  kullanılabilir. Herkes okuyabilir ve not ekleyebilir. Kişisel bilgi paylaşımını
+  engelleyen bir arayüz/uyarı bulunur; yine de kullanıcıların yazdıklarından
+  kullanıcı sorumludur.
 - **Moderatör yoktur.** Site, spam ve uygunsuz içerik için otomatik filtreleme
-  yapmaz. Gerekirse Supabase Dashboard üzerinden veya ek bir yönetim katmanıyla
-  denetim ekleyebilirsin.
-- **Supabase erişilemezse** son görülen notlar gösterilir ve durum etiketi
+  yapmaz. Gerekirse cPanel/phpMyAdmin veya ek bir yönetim katmanıyla denetim
+  ekleyebilirsin.
+- **Sunucu erişilemezse** son görülen notlar gösterilir ve durum etiketi
   `bağlantı yok` olur. Yeni not gönderimi tekrar denemeye açıktır.
 - **Tarayıcı desteği:** Güncel Chrome, Edge, Firefox ve Safari. `dialog`
   ve `IntersectionObserver` desteklenmeyen eski tarayıcılarda temel içerik

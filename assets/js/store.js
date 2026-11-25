@@ -194,19 +194,128 @@
     };
   }
 
+  function makeCustomStore(cloud, wall) {
+    var base = String(cloud.apiBase || "").replace(/\/+$/, "");
+    var limit = Math.max(1, wall.limit || 60);
+
+    function endpoint(action) {
+      return base + (base.indexOf("?") === -1 ? "?" : "&") + "action=" + encodeURIComponent(action);
+    }
+
+    function headers(extra) {
+      var result = { Accept: "application/json" };
+      if (extra) {
+        Object.keys(extra).forEach(function (name) { result[name] = extra[name]; });
+      }
+      return result;
+    }
+
+    function request(url, options) {
+      var controller = typeof AbortController !== "undefined" ? new AbortController() : null;
+      var timer = null;
+      if (controller) {
+        options.signal = controller.signal;
+        timer = window.setTimeout(function () { controller.abort(); }, 12000);
+      }
+      return window.fetch(url, options)
+        .catch(function () {
+          throw new Error("Sunucuya ulaşılamadı.");
+        })
+        .then(function (response) {
+          return response.text().then(function (text) {
+            if (timer) window.clearTimeout(timer);
+            var data = null;
+            if (text) {
+              try { data = JSON.parse(text); } catch (err) { data = null; }
+            }
+            if (!response.ok) {
+              var message = data && (data.error || data.message)
+                ? String(data.error || data.message)
+                : "Sunucu yanıt vermedi (" + response.status + ").";
+              var error = new Error(message);
+              error.status = response.status;
+              throw error;
+            }
+            return data;
+          });
+        })
+        .catch(function (error) {
+          if (timer) window.clearTimeout(timer);
+          throw error;
+        });
+    }
+
+    function notesFrom(data) {
+      if (Array.isArray(data)) return data;
+      if (data && Array.isArray(data.notes)) return data.notes;
+      return [];
+    }
+
+    function noteFrom(data) {
+      if (Array.isArray(data)) data = data[0];
+      if (data && data.note) data = data.note;
+      return normalize(data);
+    }
+
+    return {
+      mode: "cloud",
+      getCachedNotes: function () {
+        var cached = safeRead(KEY_CACHE);
+        if (!cached || !Array.isArray(cached.notes)) return [];
+        return newestFirst(normalizeList(cached.notes)).slice(0, limit);
+      },
+      loadNotes: function () {
+        return request(endpoint("notes") + "&limit=" + encodeURIComponent(limit), {
+          method: "GET",
+          headers: headers(),
+          cache: "no-store"
+        }).then(function (data) {
+          var notes = newestFirst(normalizeList(notesFrom(data))).slice(0, limit);
+          safeWrite(KEY_CACHE, { at: new Date().toISOString(), notes: notes });
+          return notes;
+        });
+      },
+      addNote: function (input) {
+        return request(endpoint("notes"), {
+          method: "POST",
+          headers: headers({ "Content-Type": "application/json" }),
+          body: JSON.stringify({
+            nickname: input.nickname ? input.nickname : null,
+            body: input.body
+          })
+        }).then(function (data) {
+          var note = noteFrom(data);
+          if (!note) throw new Error("Sunucu notu döndüremedi.");
+          return note;
+        });
+      },
+      rememberNotes: function (notes) {
+        safeWrite(KEY_CACHE, { at: new Date().toISOString(), notes: newestFirst(notes).slice(0, limit) });
+      }
+    };
+  }
+
   KF.createStore = function (config) {
     var settings = config || {};
     var wall = settings.wall || {};
     var cloud = settings.cloud || {};
     var url = String(cloud.supabaseUrl || "").trim();
     var key = String(cloud.supabaseAnonKey || "").trim();
-    var ready = cloud.provider === "supabase" &&
-      /^https?:\/\/.+/i.test(url) &&
-      key.length > 20 &&
-      !/YOUR_|BURAYA/i.test(url + key);
+    var apiBase = String(cloud.apiBase || "").trim();
+    var ready = false;
+
+    if (cloud.provider === "supabase") {
+      ready = /^https?:\/\/.+/i.test(url) &&
+        key.length > 20 &&
+        !/YOUR_|BURAYA/i.test(url + key);
+    } else if (cloud.provider === "custom") {
+      ready = /^https?:\/\/.+/i.test(apiBase) &&
+        !/YOUR_|BURAYA/i.test(apiBase);
+    }
 
     if (ready) {
       try {
+        if (cloud.provider === "custom") return makeCustomStore(cloud, wall);
         return makeSupabaseStore(cloud, wall);
       } catch (err) {
         return makeLocalStore(wall);
